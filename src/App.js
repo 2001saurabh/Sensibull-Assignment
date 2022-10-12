@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Layout from "./comoponents/layout";
+import React, { lazy, Suspense } from "react";
+// import StockTable from "./api/features/stocks/StocksTable";
+import { ColorRing } from "react-loader-spinner";
 
+const StockTable = lazy(() => import("./api/features/stocks/StocksTable"));
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Suspense fallback={<div>loading....</div>}>
+        <Layout />
+        {/* <Suspense
+        fallback={
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="blocks-loading"
+            wrapperStyle={{}}
+            wrapperClass="blocks-wrapper"
+            colors={["#b8c480", "#B2A3B5", "#F4442E", "#51E5FF", "#429EA6"]}
+          />
+        }
+      > */}
+        <StockTable />
+      </Suspense>
     </div>
   );
 }
