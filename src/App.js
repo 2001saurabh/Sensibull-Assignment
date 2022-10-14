@@ -1,28 +1,17 @@
-import Layout from "./comoponents/layout";
 import React, { lazy, Suspense } from "react";
-// import StockTable from "./api/features/stocks/StocksTable";
-import { ColorRing } from "react-loader-spinner";
+import { Routes, Route } from "react-router-dom";
+import Spinner from "./comoponents/Loader";
+const QuotesTable = lazy(() => import("./api/features/quotes/QuotesTable"));
+const StockPage = lazy(() => import("./comoponents/StockPage"));
 
-const StockTable = lazy(() => import("./api/features/stocks/StocksTable"));
 function App() {
   return (
     <div className="App">
-      <Suspense fallback={<div>loading....</div>}>
-        <Layout />
-        {/* <Suspense
-        fallback={
-          <ColorRing
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="blocks-loading"
-            wrapperStyle={{}}
-            wrapperClass="blocks-wrapper"
-            colors={["#b8c480", "#B2A3B5", "#F4442E", "#51E5FF", "#429EA6"]}
-          />
-        }
-      > */}
-        <StockTable />
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<StockPage />} />
+          <Route path="/quote/:symbol" element={<QuotesTable />} />
+        </Routes>
       </Suspense>
     </div>
   );

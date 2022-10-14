@@ -14,15 +14,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import MoreIcon from "@mui/icons-material/MoreVert";
 import Fuse from "fuse.js";
 import { useSelector, useDispatch } from "react-redux";
 import { getSearchResults } from "../api/features/stocks/stockSlice";
 
 const Header = styled(AppBar)`
-  height: 15vh;
+  height: 12vh;
   padding-top: 15px;
-  padding-inline: 8rem;
+  padding-inline: auto;
   background-color: #fff;
   box-shadow: none;
   color: #000;
@@ -32,8 +31,7 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: "8px",
   boxShadow:
     "rgb(255, 255, 255) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px",
-  // border: "4px solid #f2f2f2",
-  // zIndex: 50,
+
   backgroundColor: alpha(theme.palette.common.white, 0.25),
   "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.85),
@@ -71,7 +69,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Layout() {
+export default function Layout(props) {
+  const { disableSearch } = props;
   const data = useSelector((state) => state.stock);
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
@@ -96,13 +95,13 @@ export default function Layout() {
   // console.log("search", results);
   const handleSearchInput = (e) => {
     setSearchQuery(e.target.value);
-    
   };
   useEffect(() => {
     if (!searchQuery) {
       dispatch(getSearchResults(data.stocks));
     }
   }, [data]);
+  
   useEffect(() => {
     dispatch(getSearchResults(results));
   }, [searchQuery]);
@@ -211,22 +210,34 @@ export default function Layout() {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{
+              display: { xs: "none", sm: "block" },
+              fontSize: "25px",
+              background:
+                "-webkit-linear-gradient(45deg, #e96b86 30%, #524ff8 90%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
             Groww
           </Typography>
-          <Box sx={{ flexGrow: 0.5, ml: "60px" }}>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-                onChange={(e) => handleSearchInput(e)}
-              />
-            </Search>
-          </Box>
+
+          {disableSearch ? (
+            <></>
+          ) : (
+            <Box sx={{ flexGrow: 0.5, ml: "60px" }}>
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                  onChange={(e) => handleSearchInput(e)}
+                />
+              </Search>
+            </Box>
+          )}
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

@@ -1,0 +1,63 @@
+<---------------------------About---------------------------------->
+
+It's a Frontend UI for listing Stocks details and their Prices.
+which is built with react, redux, redux-Toolkit, react-router-dom,
+
+--> Axios(for Api calls (get , put ,post etc)), 
+--> Fuse.js(in SearchBar for fuzzy search), 
+--> papaParse (Extracting json from csv file link) ,
+--> react-loader-spinner (for loader) and Material UI.
+
+    .Deployed Link of project
+
+<----------------------Folder Structure----------------------------->
+
+.In this project, I separated normal ui components in 'Component' Folder and Api based Components in 'api/features/' Folder.
+.I have setup Redux store in 'api/app' folder and created Slices for the first page state beacuse it is required globally.
+.Search Results will be managed and stored inside stockSlice file (firstPage(stocksTable's redux State)).
+
+Features:
+
+        1. lazy-Loading, Suspense on Components which might take longer time to loader
+        2. Fuzzy search Results on Stocks Page (used npm package fuse.js)
+        3. Auto Refreshing whole page with Api data when valid time exaust.
+        4. Sorting of table cells data corresponding to head of table (property) using Mui Table.
+        5. Responsive UI
+
+<-------------------------Api EndPoint Used------------------------->
+
+stockPage Api = https://prototype.sbulltech.com/api/v2/instruments
+quotePage Api = https://prototype.sbulltech.com/api/v2/quotes
+
+<-------------------Initial Setup ---------------------------------->
+
+. As we don't have Node_modules so first install all the packages and dependencies
+to install run this code in terminal move to Client Folder.
+
+-->  npm install
+
+Once node_modules folder gets installed successfully then you are ready to run and Deploy. 
+
+<-------------------Available Scripts------------------------------>
+
+In the project directory, you can run:
+
+-->    npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits.
+You will also see any lint errors in the console.
+
+-->   npm test
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
+
+-->  npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
+
+See the section about deployment for more information.
