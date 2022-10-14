@@ -176,7 +176,7 @@ const QuotesTable = () => {
             component="div"
             sx={{ fontWeight: 700, ml: 2 }}
           >
-            {symbol}
+           Price Table for {symbol}
           </Typography>
         </Toolbar>
       </Box>

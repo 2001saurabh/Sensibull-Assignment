@@ -21,7 +21,7 @@ import { getSearchResults } from "../api/features/stocks/stockSlice";
 const Header = styled(AppBar)`
   height: 12vh;
   padding-top: 15px;
-  padding-inline: auto;
+  padding-inline: 2rem;
   background-color: #fff;
   box-shadow: none;
   color: #000;
@@ -101,7 +101,7 @@ export default function Layout(props) {
       dispatch(getSearchResults(data.stocks));
     }
   }, [data]);
-  
+
   useEffect(() => {
     dispatch(getSearchResults(results));
   }, [searchQuery]);

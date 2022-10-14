@@ -1,4 +1,4 @@
-<---------------------------About---------------------------------->
+<---------------------------About---------------------------------------->
 
 It's a Frontend UI for listing Stocks details and their Prices.
 which is built with react, redux, redux-Toolkit, react-router-dom,
@@ -8,9 +8,12 @@ which is built with react, redux, redux-Toolkit, react-router-dom,
 --> papaParse (Extracting json from csv file link) ,
 --> react-loader-spinner (for loader) and Material UI.
 
-    .Deployed Link of project
+<--------------------------Deployed Link of project----------------------->  
 
-<----------------------Folder Structure----------------------------->
+            https://sensibull-assignment.netlify.app/
+
+
+<----------------------Folder Structure------------------------------------>
 
 .In this project, I separated normal ui components in 'Component' Folder and Api based Components in 'api/features/' Folder.
 .I have setup Redux store in 'api/app' folder and created Slices for the first page state beacuse it is required globally.
