@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getStocks, getKeys } from "./stockSlice";
 import Papa from "papaparse";
@@ -14,6 +14,7 @@ import {
   Box,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import Spinner from "../../../comoponents/Loader";
 
 const Wrapper = styled(Box)`
   margin-top: 20vh;
@@ -25,7 +26,7 @@ const Wrapper = styled(Box)`
 const StockTable = () => {
   const keys = useSelector((state) => state.stock.keys);
   const searchResults = useSelector((state) => state.stock.searchResults);
-
+  const [loading, setLoading] = useState(true);
   const config = { delimeter: "," };
   const dispatch = useDispatch();
 
@@ -38,12 +39,14 @@ const StockTable = () => {
         let key = Object.keys(results.data[0]);
         dispatch(getKeys(key));
         dispatch(getStocks(results.data));
+        setLoading(false);
       },
     });
   });
 
   return (
     <Wrapper>
+      {loading? <Spinner/>:
       <TableContainer
         component={Paper}
         sx={{
@@ -111,12 +114,11 @@ const StockTable = () => {
                 </TableCell>
                 <TableCell align="justify">{row.Name}</TableCell>
                 <TableCell align="justify">{row.Sector}</TableCell>
-               
               </TableRow>
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer>}
     </Wrapper>
   );
 };

@@ -129,11 +129,12 @@ const QuotesTable = () => {
   };
 
   useEffect(() => {
-    validTill &&
-      curTime &&
-      setTimeout(() => {
+    if (validTill && curTime) {
+      let timeout = setTimeout(() => {
         document.location.reload();
       }, new Date(validTill) - new Date(curTime));
+      clearTimeout(timeout);
+    }
   }, [validTill, curTime]);
 
   // calling quotes api
@@ -176,7 +177,7 @@ const QuotesTable = () => {
             component="div"
             sx={{ fontWeight: 700, ml: 2 }}
           >
-           Price Table for {symbol}
+            Price Table for {symbol}
           </Typography>
         </Toolbar>
       </Box>
