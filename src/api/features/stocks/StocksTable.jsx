@@ -42,7 +42,7 @@ const StockTable = () => {
         setLoading(false);
       },
     });
-  });
+  },[]);
 
   return (
     <Wrapper>

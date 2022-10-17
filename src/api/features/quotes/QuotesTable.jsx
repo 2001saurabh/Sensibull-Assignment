@@ -130,10 +130,17 @@ const QuotesTable = () => {
 
   useEffect(() => {
     if (validTill && curTime) {
-      let timeout = setTimeout(() => {
-        document.location.reload();
-      }, new Date(validTill) - new Date(curTime));
-      clearTimeout(timeout);
+      const interval = setInterval(
+        () =>
+          axios.get(QuoteApiEndpoint + symbol).then((res) => {
+         
+            setTableBodyData(res.data.payload[symbol]);
+          }),
+        new Date(validTill) - new Date(curTime)
+      );
+      return () => {
+        clearInterval(interval);
+      };
     }
   }, [validTill, curTime]);
 
