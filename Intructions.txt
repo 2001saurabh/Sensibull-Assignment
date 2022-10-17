@@ -19,15 +19,14 @@ which is built with react, redux, redux-Toolkit, react-router-dom,
 .I have setup Redux store in 'api/app' folder and created Slices for the first page state beacuse it is required globally.
 .Search Results will be managed and stored inside stockSlice file (firstPage(stocksTable's redux State)).
 .In second page, to refresh the page after valid till expires i assume to time as my curr time and valid_till time as expire time.
-        -> so when (valid time - cur time ) interval passes by setTimeout we have to refresh the page.
-        -> cons -> setTimeout might not work accurate sometime but for now in this feature it is working fine.
+        -> so when (valid time - cur time ) interval passes by setInterval we have to refresh the table data with updated time and price.
         
 
 Features:
 
         1. lazy-Loading, Suspense on Components which might take longer time to loader
         2. Fuzzy search Results on Stocks Page (used npm package fuse.js)
-        3. Auto Refreshing whole page with Api data when valid time exaust.
+        3. Auto Refreshing table data by making Api call after every interval(ValidTill - curTime) for second page.
         4. Sorting of table cells data corresponding to head of table (property) using Mui Table.
         5. Responsive UI
 
