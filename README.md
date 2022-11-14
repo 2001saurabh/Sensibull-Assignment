@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Sensibull Assignment project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Link of Deployed project
 
-In the project directory, you can run:
+> [sensibull-assignment.com](https://sensibull-assignment.netlify.app/)
 
-### `npm start`
+# Technology We Used
+1. CSS | Material UI
+2. JavaScript 
+3. React JS | Redux
+4. Stock list Api (which shares csv file of all the stocks details and prices)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Features
+> ***Landing Page ***
+>
+![stock1](https://user-images.githubusercontent.com/64681134/201655959-1ce1bc43-c6e2-437b-b4cb-503daed12045.jpg)
+>
+> ***Fizzy Search implementation for stock search*** 
+>
+![stock2](https://user-images.githubusercontent.com/64681134/201655983-79177117-bfa2-40d3-87d8-9e547e6f3e07.jpg)
+>
+> ***Lazy Loading and error handling with responsive UI***
+>
+![stock3](https://user-images.githubusercontent.com/64681134/201656015-988a9103-3f4b-4d92-87be-45eb5bcd4bac.jpg)
+>
+> ***Individual Stocks have current pricing with Sorting functionality and updated data with time.*** 
+>
+![stock4](https://user-images.githubusercontent.com/64681134/201656034-fd2475e4-151f-4c88-b742-f81c3800024c.jpg)
+>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Experience this project to your desktop with this steps 
+- Clone the repo by following command ```git clone https://github.com/2001saurabh/Sensibull-Assignment.git```
+- Do install all dependencies with command 
+```js
+  npm i
+``` 
+or
+```js
+  yarn i
+```
+- open terminal and
+- In  terminal, do run the folder by the following commands
+```js
+  npm start
+```
+-  It will show a message ```You can now view Sensibull-Assignment in the browser in http://localhost:3000.```
+-  If you like the project then please give a star.
